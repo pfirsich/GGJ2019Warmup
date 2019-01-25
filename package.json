@@ -1,0 +1,25 @@
+{
+  "name": "ggj2019",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "msgpack-lite": "^0.1.26",
+    "three": "^0.100.0",
+    "ws": "^6.1.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pfirsich/GGJ2019Warmup.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/pfirsich/GGJ2019Warmup/issues"
+  },
+  "homepage": "https://github.com/pfirsich/GGJ2019Warmup#readme"
+}
