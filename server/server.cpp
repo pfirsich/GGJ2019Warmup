@@ -24,6 +24,7 @@ using EntityId = uint64_t;
 struct BaseEntity {
     EntityId id;
     float x, y;
+
     static EntityId entityCounter;
 };
 EntityId BaseEntity::entityCounter = 0;
@@ -36,6 +37,7 @@ std::unordered_map<EntityId, std::variant<PlayerEntity>> world;
 template<> std::optional<ggj::ServerMessage> processMessage<ggj::HelloMessage>(const ggj::HelloMessage& msg) {
     const auto newId = BaseEntity::entityCounter++;
     world[newId] = PlayerEntity{{newId, 0.f, 0.f}};
+
     ggj::ServerMessage response;
     auto* helloResponse = new ggj::HelloResponse();
     helloResponse->set_userid(newId);
@@ -47,6 +49,7 @@ template<> std::optional<ggj::ServerMessage> processMessage<ggj::HelloMessage>(c
 
 template<> std::optional<ggj::ServerMessage> processMessage<ggj::UpdateMessage>(const ggj::UpdateMessage& msg) {
 
+    return std::nullopt;
 }
 
 // Define a callback to handle incoming messages
