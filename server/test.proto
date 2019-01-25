@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package ggj;
+
+message HelloMessage {
+
+}
+
+message HelloResponse {
+    int32 userId = 1;
+    float x = 2;
+    float y = 3;
+}
+
+message EntityData {
+    int32 id = 1;
+    bool alive = 2;
+    float x = 3;
+    float y = 4;
+}
+
+message UpdateMessage {
+    repeated EntityData entities = 1;
+}
+
+message ClientMessage {
+    oneof payload {
+        HelloMessage helloMessage = 1;
+        UpdateMessage updateMessage = 2;
+    }
+}
+
+message ServerMessage {
+    oneof payload {
+        HelloResponse helloResponse = 1;
+        UpdateMessage updateMessage = 2;
+    }
+}
